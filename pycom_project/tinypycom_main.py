@@ -71,7 +71,9 @@ class mainWin(tinypycom_win.com_win):
             self.setParitybits()
             s_serialPort.open()
             self.m_button_openClose.SetLabel('isOpen->Close')
-            self.recvData()
+            s_serialPort.reset_input_buffer()
+            s_serialPort.reset_output_buffer()
+            threading.Timer(s_recvInterval, self.recvData).start()
 
     def clearSendDisplay( self, event ):
         self.m_textCtrl_send.Clear()
@@ -107,7 +109,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v.0.1.0 -- https://www.cnblogs.com/henjay724/")
+    main_win.SetTitle(u"tinyPyCOM v.0.2.0 -- https://www.cnblogs.com/henjay724/")
     main_win.Show()
 
     app.MainLoop()
