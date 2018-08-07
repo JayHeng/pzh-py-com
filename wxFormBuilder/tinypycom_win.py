@@ -41,7 +41,7 @@ class com_win ( wx.Frame ):
 
 		m_choice_recvFormatChoices = [ u"Char", wx.EmptyString, u"Hex" ]
 		self.m_choice_recvFormat = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 50,20 ), m_choice_recvFormatChoices, 0 )
-		self.m_choice_recvFormat.SetSelection( 2 )
+		self.m_choice_recvFormat.SetSelection( 0 )
 		receive_win.Add( self.m_choice_recvFormat, 0, wx.ALL, 5 )
 
 		self.m_staticText_null1 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 430,20 ), 0 )
@@ -77,7 +77,7 @@ class com_win ( wx.Frame ):
 
 		setting_win.Add( self.m_staticText_comPort, 0, wx.ALL, 5 )
 
-		self.m_textCtrl_comPort = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 120,20 ), 0 )
+		self.m_textCtrl_comPort = wx.TextCtrl( self, wx.ID_ANY, u"COM1", wx.DefaultPosition, wx.Size( 120,20 ), 0 )
 		setting_win.Add( self.m_textCtrl_comPort, 0, wx.ALL, 5 )
 
 		self.m_staticText_baudrate = wx.StaticText( self, wx.ID_ANY, u"Baud Rate:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
@@ -87,7 +87,7 @@ class com_win ( wx.Frame ):
 
 		m_choice_baudrateChoices = [ u"256000", u"128000", u"115200", u"57600", u"38400", u"19200", u"9600", u"4800" ]
 		self.m_choice_baudrate = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 120,20 ), m_choice_baudrateChoices, 0 )
-		self.m_choice_baudrate.SetSelection( 0 )
+		self.m_choice_baudrate.SetSelection( 2 )
 		setting_win.Add( self.m_choice_baudrate, 0, wx.ALL, 5 )
 
 		self.m_staticText_dataBits = wx.StaticText( self, wx.ID_ANY, u"Data Bits:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
@@ -120,12 +120,12 @@ class com_win ( wx.Frame ):
 		self.m_choice_parityBits.SetSelection( 0 )
 		setting_win.Add( self.m_choice_parityBits, 0, wx.ALL, 5 )
 
-		self.m_staticText_null2 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 120,15 ), 0 )
+		self.m_staticText_null2 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 90,15 ), 0 )
 		self.m_staticText_null2.Wrap( -1 )
 
 		setting_win.Add( self.m_staticText_null2, 0, wx.ALL, 5 )
 
-		self.m_button_openClose = wx.Button( self, wx.ID_ANY, u"Open/Close", wx.DefaultPosition, wx.Size( 80,40 ), 0 )
+		self.m_button_openClose = wx.Button( self, wx.ID_ANY, u"Open/Close", wx.DefaultPosition, wx.Size( 120,40 ), 0 )
 		setting_win.Add( self.m_button_openClose, 0, wx.ALL, 5 )
 
 
@@ -183,8 +183,10 @@ class com_win ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.m_choice_recvFormat.Bind( wx.EVT_CHOICE, self.setRecvFormat )
 		self.m_button_recvClear.Bind( wx.EVT_BUTTON, self.clearRecvDisplay )
 		self.m_button_openClose.Bind( wx.EVT_BUTTON, self.openClosePort )
+		self.m_choice_sendFormat.Bind( wx.EVT_CHOICE, self.setSendFormat )
 		self.m_button_sendClear.Bind( wx.EVT_BUTTON, self.clearSendDisplay )
 		self.m_button_send.Bind( wx.EVT_BUTTON, self.sendData )
 
@@ -193,10 +195,16 @@ class com_win ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def setRecvFormat( self, event ):
+		event.Skip()
+
 	def clearRecvDisplay( self, event ):
 		event.Skip()
 
 	def openClosePort( self, event ):
+		event.Skip()
+
+	def setSendFormat( self, event ):
 		event.Skip()
 
 	def clearSendDisplay( self, event ):
