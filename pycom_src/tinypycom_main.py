@@ -8,6 +8,16 @@ import threading
 s_serialPort = serial.Serial()
 s_recvInterval = 0.5
 
+s_recvStatusFieldIndex = 0
+s_sendStatusFieldIndex = 1
+s_infoStatusFieldIndex = 2
+
+s_recvStatusStr = 'Recv: '
+s_recvTotalBytes = 0
+s_sendStatusStr = 'Send: '
+s_sendTotalBytes = 0
+
+
 class mainWin(tinypycom_win.com_win):
 
     def setPort ( self ):
@@ -62,7 +72,9 @@ class mainWin(tinypycom_win.com_win):
     def openClosePort( self, event ):
         if s_serialPort.isOpen():
             s_serialPort.close()
-            self.m_button_openClose.SetLabel('isClosed->Open')
+            self.m_button_openClose.SetLabel('Open')
+            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
+            self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is closed', s_infoStatusFieldIndex)
         else:
             self.setPort()
             self.setBaudrate()
@@ -70,7 +82,17 @@ class mainWin(tinypycom_win.com_win):
             self.setStopbits()
             self.setParitybits()
             s_serialPort.open()
-            self.m_button_openClose.SetLabel('isOpen->Close')
+            self.m_button_openClose.SetLabel('Close')
+            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_green.png", wx.BITMAP_TYPE_ANY ))
+            self.statusBar_sizer.SetFieldsCount(3)
+            self.statusBar_sizer.SetStatusWidths([150, 150, 400])
+            self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
+            self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
+            self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is open, ' +
+                                               str(s_serialPort.baudrate) + ', ' +
+                                               str(s_serialPort.bytesizes) + ', ' +
+                                               s_serialPort.parity + ', ' +
+                                               str(s_serialPort.stopbits), s_infoStatusFieldIndex)
             s_serialPort.reset_input_buffer()
             s_serialPort.reset_output_buffer()
             threading.Timer(s_recvInterval, self.recvData).start()
@@ -87,6 +109,9 @@ class mainWin(tinypycom_win.com_win):
             for i in range(0, lines):
                 data = self.m_textCtrl_send.GetLineText(i)
                 s_serialPort.write(str(data))
+                global s_sendTotalBytes
+                s_sendTotalBytes += len(data)
+                self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
         else:
             self.m_textCtrl_send.Clear()
             self.m_textCtrl_send.write('Port is not open')
@@ -103,13 +128,16 @@ class mainWin(tinypycom_win.com_win):
             if num != 0:
                 data = s_serialPort.read(num)
                 self.m_textCtrl_recv.write(data)
+                global s_recvTotalBytes
+                s_recvTotalBytes += len(data)
+                self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
             threading.Timer(s_recvInterval, self.recvData).start()
 
 if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v0.2.0 -- https://www.cnblogs.com/henjay724/")
+    main_win.SetTitle(u"tinyPyCOM v0.3.0 -- https://www.cnblogs.com/henjay724/")
     main_win.Show()
 
     app.MainLoop()
