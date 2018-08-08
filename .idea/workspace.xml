@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86eb8c0f-ca2b-42be-986f-2b244c809419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pycom_src/tinypycom_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pycom_src/tinypycom_main.py" afterDir="false" />
+    <list default="true" id="d074e97b-20b0-4ad6-8c4a-3a9ba2ff6fa8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pycom_src/tinyPyCOM.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pycom_src/tinypycom_formatter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pycom_src/tinypycom_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxFormBuilder/tinyPyCOM.fbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wxFormBuilder/tinypycom_win.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +20,8 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -33,12 +37,12 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pycom_src/tinypycom_main.py">
+        <entry file="file://$PROJECT_DIR$/src/tinypycom_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="228">
+              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -51,9 +55,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="709" />
-    <option name="y" value="212" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="437" />
+    <option name="y" value="173" />
     <option name="width" value="1030" />
     <option name="height" value="805" />
   </component>
@@ -62,7 +66,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -73,12 +76,13 @@
             <path>
               <item name="tinyPyCOM" type="b2602c69:ProjectViewProjectNode" />
               <item name="tinyPyCOM" type="462c0819:PsiDirectoryNode" />
-              <item name="pycom_src" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -102,11 +106,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pycom_src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pycom_src/tinypycom_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/tinypycom_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,32 +130,32 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86eb8c0f-ca2b-42be-986f-2b244c809419" name="Default Changelist" comment="" />
-      <created>1533638565460</created>
+      <changelist id="d074e97b-20b0-4ad6-8c4a-3a9ba2ff6fa8" name="Default Changelist" comment="" />
+      <created>1533738765982</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1533638565460</updated>
+      <updated>1533738765982</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="709" y="212" width="1030" height="805" extended-state="1" />
+    <frame x="437" y="173" width="1030" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32935917" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32935917" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -161,10 +165,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pycom_src/tinypycom_main.py">
+    <entry file="file://$PROJECT_DIR$/src/tinypycom_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="228">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

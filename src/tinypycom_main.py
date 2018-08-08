@@ -1,6 +1,6 @@
 import wx
 import sys, os
-sys.path.append(os.path.abspath("../wxFormBuilder"))
+sys.path.append(os.path.abspath("../gui"))
 import tinypycom_win
 import tinypycom_formatter
 import serial

@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['tinypycom_main.py', 'tinypycom_formatter.py', '..\\wxFormBuilder\\tinypycom_win.py'],
-             pathex=['D:\\my_git_repo\\tinyPyCOM\\pycom_src'],
+a = Analysis(['tinypycom_main.py', 'tinypycom_formatter.py', '..\\gui\\tinypycom_win.py'],
+             pathex=['D:\\my_git_repo\\tinyPyCOM\\src'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='tinypycom_main',
+          name='tinyPyCOM',
           debug=False,
           strip=False,
           upx=True,
