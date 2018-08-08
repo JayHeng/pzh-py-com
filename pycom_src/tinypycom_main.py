@@ -2,6 +2,7 @@ import wx
 import sys, os
 sys.path.append(os.path.abspath("../wxFormBuilder"))
 import tinypycom_win
+import tinypycom_formatter
 import serial
 import threading
 
@@ -17,6 +18,9 @@ s_recvTotalBytes = 0
 s_sendStatusStr = 'Send: '
 s_sendTotalBytes = 0
 
+s_formatter = tinypycom_formatter.formatter()
+s_lastRecvFormat = None
+s_lastSendFormat = None
 
 class mainWin(tinypycom_win.com_win):
 
@@ -101,14 +105,50 @@ class mainWin(tinypycom_win.com_win):
         self.m_textCtrl_send.Clear()
 
     def setSendFormat( self, event ):
-        event.Skip()
+        lines = self.m_textCtrl_send.GetNumberOfLines()
+        if lines != 0:
+            m_sendFormat = self.m_choice_sendFormat.GetString(self.m_choice_sendFormat.GetSelection())
+            global s_lastSendFormat
+            if s_lastSendFormat == m_sendFormat:
+                return
+            else:
+                s_lastSendFormat = m_sendFormat
+            # Get existing data from textCtrl_send
+            data = ''
+            for i in range(0, lines):
+                data += str(self.m_textCtrl_send.GetLineText(i))
+            # Convert data format according to choice_sendFormat
+            if m_sendFormat == 'Char':
+                status, data = s_formatter.hexToChar(data)
+                if not status:
+                    self.m_textCtrl_send.Clear()
+                    self.m_textCtrl_send.write('Invalid format! Correct example: 12 34 56 ab cd ef')
+                    return
+            elif m_sendFormat == 'Hex':
+                data = s_formatter.charToHex(data)
+            # Re-show converted data in textCtrl_send
+            self.m_textCtrl_send.Clear()
+            self.m_textCtrl_send.write(data)
 
     def sendData( self, event ):
         if s_serialPort.isOpen():
             lines = self.m_textCtrl_send.GetNumberOfLines()
-            for i in range(0, lines):
-                data = self.m_textCtrl_send.GetLineText(i)
-                s_serialPort.write(str(data))
+            if lines != 0:
+                # Get existing data from textCtrl_send
+                data = ''
+                for i in range(0, lines):
+                    data += str(self.m_textCtrl_send.GetLineText(i))
+                # Make sure data is always in 'Char' format
+                m_sendFormat = self.m_choice_sendFormat.GetString(self.m_choice_sendFormat.GetSelection())
+                if m_sendFormat == 'Hex':
+                    status, data = s_formatter.hexToChar(data)
+                    if not status:
+                        self.m_textCtrl_send.Clear()
+                        self.m_textCtrl_send.write('Invalid format! Correct example: 12 34 56 ab cd ef')
+                        return
+                # Send out data via Port
+                s_serialPort.write(data)
+                # Update send info in status bar
                 global s_sendTotalBytes
                 s_sendTotalBytes += len(data)
                 self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
@@ -120,14 +160,41 @@ class mainWin(tinypycom_win.com_win):
         self.m_textCtrl_recv.Clear()
 
     def setRecvFormat( self, event ):
-        event.Skip()
+        lines = self.m_textCtrl_recv.GetNumberOfLines()
+        if lines != 0:
+            m_recvFormat = self.m_choice_recvFormat.GetString(self.m_choice_recvFormat.GetSelection())
+            global s_lastRecvFormat
+            if s_lastRecvFormat == m_recvFormat:
+                return
+            else:
+                s_lastRecvFormat = m_recvFormat
+            # Get existing data from textCtrl_recv
+            data = ''
+            for i in range(0, lines):
+                data += str(self.m_textCtrl_recv.GetLineText(i))
+            # Convert data format according to choice_recvFormat
+            if m_recvFormat == 'Char':
+                status, data = s_formatter.hexToChar(data)
+            elif m_recvFormat == 'Hex':
+                data = s_formatter.charToHex(data)
+            # Re-show converted data in textCtrl_recv
+            self.m_textCtrl_recv.Clear()
+            self.m_textCtrl_recv.write(data)
 
     def recvData( self ):
         if s_serialPort.isOpen():
             num = s_serialPort.inWaiting()
             if num != 0:
+                # Receive new data from Port
                 data = s_serialPort.read(num)
+                # Note: Assume that data is always in 'Char' format
+                # Convert data format if dispaly format is 'Hex'
+                m_recvFormat = self.m_choice_recvFormat.GetString(self.m_choice_recvFormat.GetSelection())
+                if m_recvFormat == 'Hex':
+                    data = s_formatter.charToHex(data)
+                # Show new data in textCtrl_recv
                 self.m_textCtrl_recv.write(data)
+                # Update recv info in status bar
                 global s_recvTotalBytes
                 s_recvTotalBytes += len(data)
                 self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)

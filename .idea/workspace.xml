@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86eb8c0f-ca2b-42be-986f-2b244c809419" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/pycom_src/tinypycom_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pycom_src/tinypycom_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxFormBuilder/tinyPyCOM.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/wxFormBuilder/tinyPyCOM.fbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wxFormBuilder/tinypycom_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/wxFormBuilder/tinypycom_win.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pycom_src/tinypycom_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -54,8 +52,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="299" />
-    <option name="y" value="160" />
+    <option name="x" value="709" />
+    <option name="y" value="212" />
     <option name="width" value="1030" />
     <option name="height" value="805" />
   </component>
@@ -137,7 +135,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="299" y="160" width="1030" height="805" extended-state="1" />
+    <frame x="709" y="212" width="1030" height="805" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -165,8 +163,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pycom_src/tinypycom_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="285">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
