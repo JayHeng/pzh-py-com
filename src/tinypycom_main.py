@@ -80,16 +80,20 @@ class mainWin(tinypycom_win.com_win):
             self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
             self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is closed', s_infoStatusFieldIndex)
         else:
+            self.statusBar_sizer.SetFieldsCount(3)
+            self.statusBar_sizer.SetStatusWidths([150, 150, 400])
             self.setPort()
             self.setBaudrate()
             self.setDatabits()
             self.setStopbits()
             self.setParitybits()
-            s_serialPort.open()
+            try:
+                s_serialPort.open()
+            except Exception, e:
+                self.statusBar_sizer.SetStatusText(s_serialPort.name + ' doesn\'t exist !!!', s_infoStatusFieldIndex)
+                return
             self.m_button_openClose.SetLabel('Close')
             self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_green.png", wx.BITMAP_TYPE_ANY ))
-            self.statusBar_sizer.SetFieldsCount(3)
-            self.statusBar_sizer.SetStatusWidths([150, 150, 400])
             self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
             self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
             self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is open, ' +
@@ -153,8 +157,7 @@ class mainWin(tinypycom_win.com_win):
                 s_sendTotalBytes += len(data)
                 self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
         else:
-            self.m_textCtrl_send.Clear()
-            self.m_textCtrl_send.write('Port is not open')
+            self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is not open !!!', s_infoStatusFieldIndex)
 
     def clearRecvDisplay( self, event ):
         self.m_textCtrl_recv.Clear()
@@ -204,7 +207,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v0.3.0 -- https://www.cnblogs.com/henjay724/")
+    main_win.SetTitle(u"tinyPyCOM v1.0.0 -- https://www.cnblogs.com/henjay724/")
     main_win.Show()
 
     app.MainLoop()
