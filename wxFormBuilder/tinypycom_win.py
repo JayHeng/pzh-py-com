@@ -17,10 +17,10 @@ import wx.xrc
 class com_win ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"tinyPyCOM", pos = wx.DefaultPosition, size = wx.Size( 700,600 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"tinyPyCOM", pos = wx.DefaultPosition, size = wx.Size( 700,673 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
-		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		win_sizer = wx.BoxSizer( wx.VERTICAL )
 
@@ -30,7 +30,7 @@ class com_win ( wx.Frame ):
 		self.m_staticText_receive.Wrap( -1 )
 
 		self.m_staticText_receive.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial Narrow" ) )
-		self.m_staticText_receive.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+		self.m_staticText_receive.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		receive_win.Add( self.m_staticText_receive, 0, wx.ALL, 5 )
 
@@ -44,16 +44,18 @@ class com_win ( wx.Frame ):
 		self.m_choice_recvFormat.SetSelection( 0 )
 		receive_win.Add( self.m_choice_recvFormat, 0, wx.ALL, 5 )
 
-		self.m_staticText_null1 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 430,20 ), 0 )
+		self.m_staticText_null1 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 480,20 ), 0 )
 		self.m_staticText_null1.Wrap( -1 )
 
 		receive_win.Add( self.m_staticText_null1, 0, wx.ALL, 5 )
 
-		self.m_button_recvClear = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button_recvClear = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.Size( 50,30 ), 0 )
+		self.m_button_recvClear.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+
 		receive_win.Add( self.m_button_recvClear, 0, wx.ALL, 5 )
 
 		self.m_textCtrl_recv = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 700,180 ), 0|wx.VSCROLL )
-		self.m_textCtrl_recv.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_textCtrl_recv.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
 
 		receive_win.Add( self.m_textCtrl_recv, 0, wx.ALL, 5 )
 
@@ -68,7 +70,7 @@ class com_win ( wx.Frame ):
 		self.m_staticText_settings.Wrap( -1 )
 
 		self.m_staticText_settings.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial Narrow" ) )
-		self.m_staticText_settings.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+		self.m_staticText_settings.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		setting_win.Add( self.m_staticText_settings, 0, wx.ALL, 5 )
 
@@ -78,6 +80,8 @@ class com_win ( wx.Frame ):
 		setting_win.Add( self.m_staticText_comPort, 0, wx.ALL, 5 )
 
 		self.m_textCtrl_comPort = wx.TextCtrl( self, wx.ID_ANY, u"COM1", wx.DefaultPosition, wx.Size( 120,20 ), 0 )
+		self.m_textCtrl_comPort.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+
 		setting_win.Add( self.m_textCtrl_comPort, 0, wx.ALL, 5 )
 
 		self.m_staticText_baudrate = wx.StaticText( self, wx.ID_ANY, u"Baud Rate:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
@@ -88,6 +92,8 @@ class com_win ( wx.Frame ):
 		m_choice_baudrateChoices = [ u"256000", u"128000", u"115200", u"57600", u"38400", u"19200", u"9600", u"4800" ]
 		self.m_choice_baudrate = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 120,20 ), m_choice_baudrateChoices, 0 )
 		self.m_choice_baudrate.SetSelection( 2 )
+		self.m_choice_baudrate.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+
 		setting_win.Add( self.m_choice_baudrate, 0, wx.ALL, 5 )
 
 		self.m_staticText_dataBits = wx.StaticText( self, wx.ID_ANY, u"Data Bits:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
@@ -125,7 +131,12 @@ class com_win ( wx.Frame ):
 
 		setting_win.Add( self.m_staticText_null2, 0, wx.ALL, 5 )
 
-		self.m_button_openClose = wx.Button( self, wx.ID_ANY, u"Open/Close", wx.DefaultPosition, wx.Size( 120,40 ), 0 )
+		self.m_bitmap_led = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		setting_win.Add( self.m_bitmap_led, 0, wx.ALL, 5 )
+
+		self.m_button_openClose = wx.Button( self, wx.ID_ANY, u"Open", wx.DefaultPosition, wx.Size( 80,40 ), 0 )
+		self.m_button_openClose.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+
 		setting_win.Add( self.m_button_openClose, 0, wx.ALL, 5 )
 
 
@@ -150,15 +161,19 @@ class com_win ( wx.Frame ):
 		self.m_choice_sendFormat.SetSelection( 0 )
 		send_win.Add( self.m_choice_sendFormat, 0, wx.ALL, 5 )
 
-		self.m_staticText_null3 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 80,20 ), 0 )
+		self.m_staticText_null3 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 130,20 ), 0 )
 		self.m_staticText_null3.Wrap( -1 )
 
 		send_win.Add( self.m_staticText_null3, 0, wx.ALL, 5 )
 
-		self.m_button_sendClear = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button_sendClear = wx.Button( self, wx.ID_ANY, u"Clear", wx.DefaultPosition, wx.Size( 50,30 ), 0 )
+		self.m_button_sendClear.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+
 		send_win.Add( self.m_button_sendClear, 0, wx.ALL, 5 )
 
 		self.m_textCtrl_send = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,105 ), 0|wx.VSCROLL )
+		self.m_textCtrl_send.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
+
 		send_win.Add( self.m_textCtrl_send, 0, wx.ALL, 5 )
 
 		self.m_staticText_null4 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 120,15 ), 0 )
@@ -167,6 +182,8 @@ class com_win ( wx.Frame ):
 		send_win.Add( self.m_staticText_null4, 0, wx.ALL, 5 )
 
 		self.m_button_send = wx.Button( self, wx.ID_ANY, u"Send", wx.DefaultPosition, wx.Size( 80,40 ), 0 )
+		self.m_button_send.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+
 		send_win.Add( self.m_button_send, 0, wx.ALL, 5 )
 
 
@@ -174,6 +191,26 @@ class com_win ( wx.Frame ):
 
 
 		win_sizer.Add( edit_win, 1, wx.EXPAND, 5 )
+
+		logo_win = wx.WrapSizer( wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS )
+
+		self.m_staticText_techLogo = wx.StaticText( self, wx.ID_ANY, u"Powered by:", wx.DefaultPosition, wx.Size( 700,15 ), 0 )
+		self.m_staticText_techLogo.Wrap( -1 )
+
+		logo_win.Add( self.m_staticText_techLogo, 0, wx.ALL, 5 )
+
+		self.m_staticText_null5 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,15 ), 0 )
+		self.m_staticText_null5.Wrap( -1 )
+
+		logo_win.Add( self.m_staticText_null5, 0, wx.ALL, 5 )
+
+		self.m_bitmap_logo = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../img/logo_merge.jpg", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap_logo.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_APPWORKSPACE ) )
+
+		logo_win.Add( self.m_bitmap_logo, 0, wx.ALL, 5 )
+
+
+		win_sizer.Add( logo_win, 1, wx.EXPAND, 5 )
 
 
 		self.SetSizer( win_sizer )
