@@ -203,11 +203,21 @@ class mainWin(tinypycom_win.com_win):
                 self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
             threading.Timer(s_recvInterval, self.recvData).start()
 
+    def showHomepageMessage( self, event ):
+        messageText = (('Code: \n    https://github.com/JayHeng/tinyPyCOM.git \n') +
+                       ('Doc: \n    https://www.cnblogs.com/henjay724/p/9416096.html \n'))
+        wx.MessageBox(messageText, "Homepage", wx.OK | wx.ICON_INFORMATION)
+
+    def showAboutMessage( self, event ):
+        messageText = (('Author: Jay Heng \n') +
+                       ('Email: hengjie1989@foxmail.com \n'))
+        wx.MessageBox(messageText, "About", wx.OK | wx.ICON_INFORMATION)
+
 if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v1.0.0 -- https://www.cnblogs.com/henjay724/")
+    main_win.SetTitle(u"tinyPyCOM v1.0.0")
     main_win.Show()
 
     app.MainLoop()

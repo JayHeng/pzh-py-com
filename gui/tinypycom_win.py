@@ -22,6 +22,18 @@ class com_win ( wx.Frame ):
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
+		self.menubar = wx.MenuBar( 0 )
+		self.m_menu_help = wx.Menu()
+		self.m_menuItem_homPage = wx.MenuItem( self.m_menu_help, wx.ID_ANY, u"Home Page", wx.EmptyString, wx.ITEM_NORMAL )
+		self.m_menu_help.Append( self.m_menuItem_homPage )
+
+		self.m_menuItem_about = wx.MenuItem( self.m_menu_help, wx.ID_ANY, u"About Author", wx.EmptyString, wx.ITEM_NORMAL )
+		self.m_menu_help.Append( self.m_menuItem_about )
+
+		self.menubar.Append( self.m_menu_help, u"Help" )
+
+		self.SetMenuBar( self.menubar )
+
 		win_sizer = wx.BoxSizer( wx.VERTICAL )
 
 		receive_win = wx.WrapSizer( wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS )
@@ -220,6 +232,8 @@ class com_win ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
+		self.Bind( wx.EVT_MENU, self.showHomepageMessage, id = self.m_menuItem_homPage.GetId() )
+		self.Bind( wx.EVT_MENU, self.showAboutMessage, id = self.m_menuItem_about.GetId() )
 		self.m_choice_recvFormat.Bind( wx.EVT_CHOICE, self.setRecvFormat )
 		self.m_button_recvClear.Bind( wx.EVT_BUTTON, self.clearRecvDisplay )
 		self.m_button_openClose.Bind( wx.EVT_BUTTON, self.openClosePort )
@@ -232,6 +246,12 @@ class com_win ( wx.Frame ):
 
 
 	# Virtual event handlers, overide them in your derived class
+	def showHomepageMessage( self, event ):
+		event.Skip()
+
+	def showAboutMessage( self, event ):
+		event.Skip()
+
 	def setRecvFormat( self, event ):
 		event.Skip()
 
