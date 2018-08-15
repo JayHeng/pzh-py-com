@@ -143,7 +143,7 @@ class com_win ( wx.Frame ):
 
 		setting_win.Add( self.m_staticText_null2, 0, wx.ALL, 5 )
 
-		self.m_bitmap_led = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap_led = wx.StaticBitmap( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, 0 )
 		setting_win.Add( self.m_bitmap_led, 0, wx.ALL, 5 )
 
 		self.m_button_openClose = wx.Button( self, wx.ID_ANY, u"Open", wx.DefaultPosition, wx.Size( 80,40 ), 0 )
@@ -216,7 +216,7 @@ class com_win ( wx.Frame ):
 
 		logo_win.Add( self.m_staticText_null5, 0, wx.ALL, 5 )
 
-		self.m_bitmap_logo = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"../img/logo_merge.jpg", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_bitmap_logo = wx.StaticBitmap( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_bitmap_logo.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_APPWORKSPACE ) )
 
 		logo_win.Add( self.m_bitmap_logo, 0, wx.ALL, 5 )

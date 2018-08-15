@@ -5,6 +5,11 @@ import tinypycom_win
 import tinypycom_formatter
 import serial
 import threading
+#sys.path.append(os.path.abspath("../img"))
+#import led_black
+#import led_green
+#import logo_merge
+#import tinypycom
 
 s_serialPort = serial.Serial()
 s_recvInterval = 0.5
@@ -23,6 +28,15 @@ s_lastRecvFormat = None
 s_lastSendFormat = None
 
 class mainWin(tinypycom_win.com_win):
+
+    def __init__(self, parent):
+        tinypycom_win.com_win.__init__(self, parent)
+        icon = wx.EmptyIcon()
+        icon.CopyFromBitmap(wx.Bitmap( u"../img/tinypycom.ico", wx.BITMAP_TYPE_ANY))
+        self.SetIcon(icon)
+        #self.SetIcon(tinypycom.tinypycom.GetIcon())
+        self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
+        self.m_bitmap_logo.SetBitmap(wx.Bitmap( u"../img/logo_merge.jpg", wx.BITMAP_TYPE_ANY ))
 
     def setPort ( self ):
         s_serialPort.port = self.m_textCtrl_comPort.GetLineText(0)
@@ -94,6 +108,7 @@ class mainWin(tinypycom_win.com_win):
                 return
             self.m_button_openClose.SetLabel('Close')
             self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_green.png", wx.BITMAP_TYPE_ANY ))
+            #self.m_bitmap_led.SetBitmap(wx.Bitmap( led_green.led_green.GetIcon(), wx.BITMAP_TYPE_ANY ))
             self.statusBar_sizer.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
             self.statusBar_sizer.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
             self.statusBar_sizer.SetStatusText(s_serialPort.name + ' is open, ' +
@@ -217,7 +232,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v1.0.0")
+    main_win.SetTitle(u"tinyPyCOM v1.1.0")
     main_win.Show()
 
     app.MainLoop()
