@@ -726,7 +726,7 @@
                                 <property name="resize">Resizable</property>
                                 <property name="show">1</property>
                                 <property name="size">700,180</property>
-                                <property name="style"></property>
+                                <property name="style">wxTE_MULTILINE</property>
                                 <property name="subclass">; forward_declare</property>
                                 <property name="toolbar_pane">0</property>
                                 <property name="tooltip"></property>
@@ -737,7 +737,7 @@
                                 <property name="value"></property>
                                 <property name="window_extra_style"></property>
                                 <property name="window_name"></property>
-                                <property name="window_style">wxVSCROLL</property>
+                                <property name="window_style"></property>
                                 <event name="OnAux1DClick"></event>
                                 <event name="OnAux1Down"></event>
                                 <event name="OnAux1Up"></event>
@@ -2637,7 +2637,7 @@
                                         <property name="resize">Resizable</property>
                                         <property name="show">1</property>
                                         <property name="size">350,105</property>
-                                        <property name="style"></property>
+                                        <property name="style">wxTE_MULTILINE</property>
                                         <property name="subclass">; forward_declare</property>
                                         <property name="toolbar_pane">0</property>
                                         <property name="tooltip"></property>
@@ -2648,7 +2648,7 @@
                                         <property name="value"></property>
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
-                                        <property name="window_style">wxVSCROLL</property>
+                                        <property name="window_style"></property>
                                         <event name="OnAux1DClick"></event>
                                         <event name="OnAux1Down"></event>
                                         <event name="OnAux1Up"></event>

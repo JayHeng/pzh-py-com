@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d074e97b-20b0-4ad6-8c4a-3a9ba2ff6fa8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/tinyPyCOM.fbp" beforeDir="false" afterPath="$PROJECT_DIR$/gui/tinyPyCOM.fbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/tinypycom_win.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/tinypycom_win.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tinypycom_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tinypycom_main.py" afterDir="false" />

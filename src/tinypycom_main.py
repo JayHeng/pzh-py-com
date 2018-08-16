@@ -31,7 +31,7 @@ class mainWin(tinypycom_win.com_win):
 
     def __init__(self, parent):
         tinypycom_win.com_win.__init__(self, parent)
-        icon = wx.EmptyIcon()
+        icon = wx.Icon()
         icon.CopyFromBitmap(wx.Bitmap( u"../img/tinypycom.ico", wx.BITMAP_TYPE_ANY))
         self.SetIcon(icon)
         #self.SetIcon(tinypycom.tinypycom.GetIcon())
@@ -232,7 +232,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v1.1.0")
+    main_win.SetTitle(u"tinyPyCOM v1.1.1")
     main_win.Show()
 
     app.MainLoop()

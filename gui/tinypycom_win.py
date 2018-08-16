@@ -66,7 +66,7 @@ class com_win ( wx.Frame ):
 
 		receive_win.Add( self.m_button_recvClear, 0, wx.ALL, 5 )
 
-		self.m_textCtrl_recv = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 700,180 ), 0|wx.VSCROLL )
+		self.m_textCtrl_recv = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 700,180 ), wx.TE_MULTILINE )
 		self.m_textCtrl_recv.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
 
 		receive_win.Add( self.m_textCtrl_recv, 0, wx.ALL, 5 )
@@ -183,7 +183,7 @@ class com_win ( wx.Frame ):
 
 		send_win.Add( self.m_button_sendClear, 0, wx.ALL, 5 )
 
-		self.m_textCtrl_send = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,105 ), 0|wx.VSCROLL )
+		self.m_textCtrl_send = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,105 ), wx.TE_MULTILINE )
 		self.m_textCtrl_send.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
 
 		send_win.Add( self.m_textCtrl_send, 0, wx.ALL, 5 )
