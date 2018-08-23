@@ -17,7 +17,7 @@ import wx.xrc
 class com_win ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"tinyPyCOM", pos = wx.DefaultPosition, size = wx.Size( 700,673 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = u"tinyPyCOM", pos = wx.DefaultPosition, size = wx.Size( 700,598 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
@@ -42,12 +42,15 @@ class com_win ( wx.Frame ):
 		self.m_staticText_receive.Wrap( -1 )
 
 		self.m_staticText_receive.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial Narrow" ) )
+		self.m_staticText_receive.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.m_staticText_receive.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		receive_win.Add( self.m_staticText_receive, 0, wx.ALL, 5 )
 
 		self.m_staticText_recvFormat = wx.StaticText( self, wx.ID_ANY, u"Format:", wx.DefaultPosition, wx.Size( 50,15 ), 0 )
 		self.m_staticText_recvFormat.Wrap( -1 )
+
+		self.m_staticText_recvFormat.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		receive_win.Add( self.m_staticText_recvFormat, 0, wx.ALL, 5 )
 
@@ -82,12 +85,15 @@ class com_win ( wx.Frame ):
 		self.m_staticText_settings.Wrap( -1 )
 
 		self.m_staticText_settings.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial Narrow" ) )
+		self.m_staticText_settings.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 		self.m_staticText_settings.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		setting_win.Add( self.m_staticText_settings, 0, wx.ALL, 5 )
 
 		self.m_staticText_comPort = wx.StaticText( self, wx.ID_ANY, u"Com Port:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_comPort.Wrap( -1 )
+
+		self.m_staticText_comPort.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		setting_win.Add( self.m_staticText_comPort, 0, wx.ALL, 5 )
 
@@ -98,6 +104,8 @@ class com_win ( wx.Frame ):
 
 		self.m_staticText_baudrate = wx.StaticText( self, wx.ID_ANY, u"Baud Rate:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_baudrate.Wrap( -1 )
+
+		self.m_staticText_baudrate.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		setting_win.Add( self.m_staticText_baudrate, 0, wx.ALL, 5 )
 
@@ -111,6 +119,8 @@ class com_win ( wx.Frame ):
 		self.m_staticText_dataBits = wx.StaticText( self, wx.ID_ANY, u"Data Bits:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_dataBits.Wrap( -1 )
 
+		self.m_staticText_dataBits.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
+
 		setting_win.Add( self.m_staticText_dataBits, 0, wx.ALL, 5 )
 
 		m_choice_dataBitsChoices = [ u"8", u"7", u"6", u"5" ]
@@ -121,6 +131,8 @@ class com_win ( wx.Frame ):
 		self.m_staticText_stopBits = wx.StaticText( self, wx.ID_ANY, u"Stop Bits:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_stopBits.Wrap( -1 )
 
+		self.m_staticText_stopBits.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
+
 		setting_win.Add( self.m_staticText_stopBits, 0, wx.ALL, 5 )
 
 		m_choice_stopBitsChoices = [ u"1", u"1.5", u"2" ]
@@ -130,6 +142,8 @@ class com_win ( wx.Frame ):
 
 		self.m_staticText_parityBits = wx.StaticText( self, wx.ID_ANY, u"Parity Bits", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_parityBits.Wrap( -1 )
+
+		self.m_staticText_parityBits.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		setting_win.Add( self.m_staticText_parityBits, 0, wx.ALL, 5 )
 
@@ -160,11 +174,14 @@ class com_win ( wx.Frame ):
 		self.m_staticText_send.Wrap( -1 )
 
 		self.m_staticText_send.SetFont( wx.Font( 14, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Arial Narrow" ) )
+		self.m_staticText_send.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		send_win.Add( self.m_staticText_send, 0, wx.ALL, 5 )
 
 		self.m_staticText_sendFormat = wx.StaticText( self, wx.ID_ANY, u"Format:", wx.DefaultPosition, wx.Size( 50,15 ), 0 )
 		self.m_staticText_sendFormat.Wrap( -1 )
+
+		self.m_staticText_sendFormat.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOWTEXT ) )
 
 		send_win.Add( self.m_staticText_sendFormat, 0, wx.ALL, 5 )
 
@@ -203,26 +220,6 @@ class com_win ( wx.Frame ):
 
 
 		win_sizer.Add( edit_win, 1, wx.EXPAND, 5 )
-
-		logo_win = wx.WrapSizer( wx.HORIZONTAL, wx.WRAPSIZER_DEFAULT_FLAGS )
-
-		self.m_staticText_techLogo = wx.StaticText( self, wx.ID_ANY, u"Powered by:", wx.DefaultPosition, wx.Size( 700,15 ), 0 )
-		self.m_staticText_techLogo.Wrap( -1 )
-
-		logo_win.Add( self.m_staticText_techLogo, 0, wx.ALL, 5 )
-
-		self.m_staticText_null5 = wx.StaticText( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 55,15 ), 0 )
-		self.m_staticText_null5.Wrap( -1 )
-
-		logo_win.Add( self.m_staticText_null5, 0, wx.ALL, 5 )
-
-		self.m_bitmap_logo = wx.StaticBitmap( self, wx.ID_ANY, wx.NullBitmap, wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_bitmap_logo.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_APPWORKSPACE ) )
-
-		logo_win.Add( self.m_bitmap_logo, 0, wx.ALL, 5 )
-
-
-		win_sizer.Add( logo_win, 1, wx.EXPAND, 5 )
 
 
 		self.SetSizer( win_sizer )

@@ -36,7 +36,6 @@ class mainWin(tinypycom_win.com_win):
         self.SetIcon(icon)
         #self.SetIcon(tinypycom.tinypycom.GetIcon())
         self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
-        self.m_bitmap_logo.SetBitmap(wx.Bitmap( u"../img/logo_merge.jpg", wx.BITMAP_TYPE_ANY ))
 
     def setPort ( self ):
         s_serialPort.port = self.m_textCtrl_comPort.GetLineText(0)
@@ -232,7 +231,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v1.1.1")
+    main_win.SetTitle(u"tinyPyCOM v1.2.0")
     main_win.Show()
 
     app.MainLoop()
