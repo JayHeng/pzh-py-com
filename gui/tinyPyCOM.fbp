@@ -984,7 +984,7 @@
                                     <property name="border">5</property>
                                     <property name="flag">wxALL</property>
                                     <property name="proportion">0</property>
-                                    <object class="wxTextCtrl" expanded="1">
+                                    <object class="wxChoice" expanded="1">
                                         <property name="BottomDockable">1</property>
                                         <property name="LeftDockable">1</property>
                                         <property name="RightDockable">1</property>
@@ -994,10 +994,11 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg">wxSYS_COLOUR_INFOBK</property>
+                                        <property name="bg"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
                                         <property name="center_pane">0</property>
+                                        <property name="choices"></property>
                                         <property name="close_button">1</property>
                                         <property name="context_help"></property>
                                         <property name="context_menu">1</property>
@@ -1015,12 +1016,11 @@
                                         <property name="max_size"></property>
                                         <property name="maximize_button">0</property>
                                         <property name="maximum_size"></property>
-                                        <property name="maxlength"></property>
                                         <property name="min_size"></property>
                                         <property name="minimize_button">0</property>
                                         <property name="minimum_size"></property>
                                         <property name="moveable">1</property>
-                                        <property name="name">m_textCtrl_comPort</property>
+                                        <property name="name">m_choice_comPort</property>
                                         <property name="pane_border">1</property>
                                         <property name="pane_position"></property>
                                         <property name="pane_size"></property>
@@ -1028,6 +1028,7 @@
                                         <property name="pin_button">1</property>
                                         <property name="pos"></property>
                                         <property name="resize">Resizable</property>
+                                        <property name="selection">0</property>
                                         <property name="show">1</property>
                                         <property name="size">120,20</property>
                                         <property name="style"></property>
@@ -1038,7 +1039,6 @@
                                         <property name="validator_style">wxFILTER_NONE</property>
                                         <property name="validator_type">wxDefaultValidator</property>
                                         <property name="validator_variable"></property>
-                                        <property name="value">COM1</property>
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
@@ -1050,7 +1050,8 @@
                                         <event name="OnAux2Up"></event>
                                         <event name="OnChar"></event>
                                         <event name="OnCharHook"></event>
-                                        <event name="OnEnterWindow"></event>
+                                        <event name="OnChoice"></event>
+                                        <event name="OnEnterWindow">refreshComPort</event>
                                         <event name="OnEraseBackground"></event>
                                         <event name="OnKeyDown"></event>
                                         <event name="OnKeyUp"></event>
@@ -1071,10 +1072,6 @@
                                         <event name="OnRightUp"></event>
                                         <event name="OnSetFocus"></event>
                                         <event name="OnSize"></event>
-                                        <event name="OnText"></event>
-                                        <event name="OnTextEnter"></event>
-                                        <event name="OnTextMaxLen"></event>
-                                        <event name="OnTextURL"></event>
                                         <event name="OnUpdateUI"></event>
                                     </object>
                                 </object>

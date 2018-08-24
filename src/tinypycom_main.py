@@ -4,6 +4,7 @@ sys.path.append(os.path.abspath("../gui"))
 import tinypycom_win
 import tinypycom_formatter
 import serial
+import serial.tools.list_ports
 import threading
 #sys.path.append(os.path.abspath("../img"))
 #import led_black
@@ -36,9 +37,24 @@ class mainWin(tinypycom_win.com_win):
         self.SetIcon(icon)
         #self.SetIcon(tinypycom.tinypycom.GetIcon())
         self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
+        self.refreshComPort(None)
+        self.m_choice_comPort.SetSelection( 0 )
+
+    def refreshComPort( self, event ):
+        comports = list(serial.tools.list_ports.comports())
+        ports = [None] * len(comports)
+        for i in range(len(comports)):
+            comport = list(comports[i])
+            # example comport = [u'COM3', u'Intel(R) Active Management Technology - SOL (COM3)', u'PCI\\VEN_8086&DEV_9D3D&SUBSYS_06DC1028&REV_21\\3&11583659&0&B3']
+            ports[i] = comport[0] + ' - ' + comport[1]
+        self.m_choice_comPort.Clear()
+        self.m_choice_comPort.SetItems(ports)
 
     def setPort ( self ):
-        s_serialPort.port = self.m_textCtrl_comPort.GetLineText(0)
+        index = self.m_choice_comPort.GetSelection()
+        comPort = self.m_choice_comPort.GetString(index)
+        comPort = comPort.split(' - ')
+        s_serialPort.port = comPort[0]
 
     def setBaudrate ( self ):
         index = self.m_choice_baudrate.GetSelection()
@@ -231,7 +247,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"tinyPyCOM v1.2.0")
+    main_win.SetTitle(u"tinyPyCOM v1.3.0")
     main_win.Show()
 
     app.MainLoop()

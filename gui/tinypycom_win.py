@@ -97,10 +97,10 @@ class com_win ( wx.Frame ):
 
 		setting_win.Add( self.m_staticText_comPort, 0, wx.ALL, 5 )
 
-		self.m_textCtrl_comPort = wx.TextCtrl( self, wx.ID_ANY, u"COM1", wx.DefaultPosition, wx.Size( 120,20 ), 0 )
-		self.m_textCtrl_comPort.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
-
-		setting_win.Add( self.m_textCtrl_comPort, 0, wx.ALL, 5 )
+		m_choice_comPortChoices = []
+		self.m_choice_comPort = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 120,20 ), m_choice_comPortChoices, 0 )
+		self.m_choice_comPort.SetSelection( 0 )
+		setting_win.Add( self.m_choice_comPort, 0, wx.ALL, 5 )
 
 		self.m_staticText_baudrate = wx.StaticText( self, wx.ID_ANY, u"Baud Rate:", wx.DefaultPosition, wx.Size( 150,15 ), wx.ALIGN_RIGHT )
 		self.m_staticText_baudrate.Wrap( -1 )
@@ -233,6 +233,7 @@ class com_win ( wx.Frame ):
 		self.Bind( wx.EVT_MENU, self.showAboutMessage, id = self.m_menuItem_about.GetId() )
 		self.m_choice_recvFormat.Bind( wx.EVT_CHOICE, self.setRecvFormat )
 		self.m_button_recvClear.Bind( wx.EVT_BUTTON, self.clearRecvDisplay )
+		self.m_choice_comPort.Bind( wx.EVT_ENTER_WINDOW, self.refreshComPort )
 		self.m_button_openClose.Bind( wx.EVT_BUTTON, self.openClosePort )
 		self.m_choice_sendFormat.Bind( wx.EVT_CHOICE, self.setSendFormat )
 		self.m_button_sendClear.Bind( wx.EVT_BUTTON, self.clearSendDisplay )
@@ -253,6 +254,9 @@ class com_win ( wx.Frame ):
 		event.Skip()
 
 	def clearRecvDisplay( self, event ):
+		event.Skip()
+
+	def refreshComPort( self, event ):
 		event.Skip()
 
 	def openClosePort( self, event ):
