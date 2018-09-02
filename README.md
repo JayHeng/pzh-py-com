@@ -1,6 +1,8 @@
 # JaysPyCOM
 A tiny serial port assistant based on pySerial + wxPython
 
+[![GitHub release](https://img.shields.io/github/release/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/JaysPyCOM/v1.0.0.svg)](https://github.com/JayHeng/JaysPyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/blob/master/LICENSE.txt)
+
 <img src="http://odox9r8vg.bkt.clouddn.com/image/cnblogs/JaysPyCOM_overview.png" style="zoom:100%" />
 
 ### How to use :
@@ -20,7 +22,7 @@ First of all, you should install all packages listed in [《JaysPyCOM环境搭�
   6. Open "\JaysPyCOM\bin\JaysPyCOM.exe" to use it
 ```
 
-### Features in v1.0.0 :
+### Tool Features :
 ********************
 * Auto-detect all available COM Ports
 * Both receive and send are supported
