@@ -12,11 +12,12 @@ JaysPyCOM.exe is a free application, you don't need to install it, just open it 
 ********************
 First of all, you should install all packages listed in [《JaysPyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html), then follow below steps:
 ```text
-  1. cd to "\JaysPyCOM\src\"
-  2. run "pyinstaller JaysPyCOM.spec"
-  3. You will see "\JaysPyCOM\src\dist\JaysPyCOM.exe" is generated
-  4. Move JaysPyCOM.exe to dictionary "\JaysPyCOM\bin\" (this step is a MUST!!!)
-  5. Open "\JaysPyCOM\bin\JaysPyCOM.exe" to use it
+  1. cd to "\JaysPyCOM\bin\"
+  2. Update pathex in JaysPyCOM.spec to current path in your PC
+  3. run "pyinstaller JaysPyCOM.spec"
+  4. You will see "\JaysPyCOM\bin\dist\JaysPyCOM.exe" is generated
+  5. Move JaysPyCOM.exe to dictionary "\JaysPyCOM\bin\" (this step is a MUST!!!)
+  6. Open "\JaysPyCOM\bin\JaysPyCOM.exe" to use it
 ```
 
 ### Features in v1.0.0 :

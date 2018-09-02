@@ -1,0 +1,1 @@
+Get logo from https://pythonhosted.org/pyserial/

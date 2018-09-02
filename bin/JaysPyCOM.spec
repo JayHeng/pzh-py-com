@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['jayspycom_main.py', 'jayspycom_formatter.py', '..\\gui\\jayspycom_win.py'],
-             pathex=['D:\\my_git_repo\\JaysPyCOM\\src'],
+a = Analysis(['..\\src\\jayspycom_main.py', '..\\src\\jayspycom_formatter.py', '..\\gui\\jayspycom_win.py'],
+             pathex=['D:\\my_git_repo\\JaysPyCOM\\bin'],
              binaries=[],
              datas=[],
              hiddenimports=[],
