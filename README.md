@@ -3,7 +3,7 @@ A tiny serial port assistant based on pySerial + wxPython
 
 [![GitHub release](https://img.shields.io/github/release/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/JaysPyCOM/v1.0.0.svg)](https://github.com/JayHeng/JaysPyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/blob/master/LICENSE.txt)
 
-<img src="http://odox9r8vg.bkt.clouddn.com/image/cnblogs/JaysPyCOM_overview.png" style="zoom:100%" />
+<img src="http://henjay724.com/image/cnblogs/JaysPyCOM_overview.png" style="zoom:100%" />
 
 ### How to use :
 ********************
