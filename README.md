@@ -1,26 +1,18 @@
-# JaysPyCOM
+# Jays-PyCOM
 A tiny serial port assistant based on pySerial + wxPython
 
-[![GitHub release](https://img.shields.io/github/release/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/JaysPyCOM/v1.0.0.svg)](https://github.com/JayHeng/JaysPyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/JaysPyCOM.svg)](https://github.com/JayHeng/JaysPyCOM/blob/master/LICENSE.txt)
+[![GitHub release](https://img.shields.io/github/release/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/Jays-PyCOM/v1.0.0.svg)](https://github.com/JayHeng/Jays-PyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/blob/master/LICENSE.txt)
 
-<img src="http://henjay724.com/image/cnblogs/JaysPyCOM_overview.png" style="zoom:100%" />
+<img src="http://henjay724.com/image/cnblogs/JaysPyCOM_v1.0.0_overview.png" style="zoom:100%" />
 
 ### How to use :
 ********************
-JaysPyCOM.exe is a free application, you don't need to install it, just open it directly under "\JaysPyCOM\bin\" dictionary
-> Note: it is only verified in environment: Windows 10, x64bit, if you cannot use it, please try to build it by yourself
+Jays-PyCOM.exe is a free application, you don't need to install it, just open it directly under "\Jays-PyCOM\bin\" dictionary
 
 ### How to build :
 ********************
-First of all, you should install all packages listed in [《JaysPyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html), then follow below steps:
-```text
-  1. cd to "\JaysPyCOM\bin\"
-  2. Update pathex in JaysPyCOM.spec to current path in your PC
-  3. run "pyinstaller JaysPyCOM.spec"
-  4. You will see "\JaysPyCOM\bin\dist\JaysPyCOM.exe" is generated
-  5. Move JaysPyCOM.exe to dictionary "\JaysPyCOM\bin\" (this step is a MUST!!!)
-  6. Open "\JaysPyCOM\bin\JaysPyCOM.exe" to use it
-```
+The Jays-PyCOM.exe in the source code package is packaged in the Windows 10 x32 environment and has only been tested in this environment.  
+If it cannot be used directly for system environment reasons, you need to install [Python2.7.15 x86 version ](https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi)(Confirm that the directory "\Python27\" and "\Python27\Scripts\" are in the system environment variable path after the installation is completed), then click on "do_setup_by_pip.bat" in the "\Jays-PyCOM\env\" directory to install the Python library on which Jays-PyCOM depends. Finally, click "do_pack_by_pyinstaller.bat" to regenerate the Jays-PyCOM.exe.
 
 ### Tool Features :
 ********************
@@ -28,7 +20,7 @@ First of all, you should install all packages listed in [《JaysPyCOM环境搭�
 * Both receive and send are supported
 * View data in Hex or Text(ASCII) format
 * Show statistics and error information
-* Design detail: [《JaysPyCOM诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)
+* Design detail: [《Jays-PyCOM诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)
 
 ### License :
 ********************
