@@ -9,10 +9,18 @@ A tiny serial port assistant based on pySerial + wxPython
 ********************
 Jays-PyCOM.exe is a free application, you don't need to install it, just open it directly under "\Jays-PyCOM\bin\" dictionary
 
+> Note: The Jays-PyCOM.exe in the source code package is packaged in the Windows 10 x32 environment and has only been tested in this environment. If it cannot be used directly for system environment reasons, you need to rebuild it.  
+
 ### How to build :
 ********************
-The Jays-PyCOM.exe in the source code package is packaged in the Windows 10 x32 environment and has only been tested in this environment.  
-If it cannot be used directly for system environment reasons, you need to install [Python2.7.15 x86 version ](https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi)(Confirm that the directory "\Python27\" and "\Python27\Scripts\" are in the system environment variable path after the installation is completed), then click on "do_setup_by_pip.bat" in the "\Jays-PyCOM\env\" directory to install the Python library on which Jays-PyCOM depends. Finally, click "do_pack_by_pyinstaller.bat" to regenerate the Jays-PyCOM.exe.
+First of all, , you need to install all Non-Python packages listed in [《Jays-PyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html), then follow below steps:
+```text
+  1. Install Python2.7.15 x86 version
+  2. Confirm that the directory "\Python27\" and "\Python27\Scripts\" are in the system environment variable path after the installation is completed
+  3. Click on "do_setup_by_pip.bat" in the "\Jays-PyCOM\env\" directory to install the Python library on which Jays-PyCOM depends
+  4. Click "do_pack_by_pyinstaller.bat" to regenerate the Jays-PyCOM.exe
+  5. Open "\Jays-PyCOM\bin\Jays-PyCOM.exe" to use it
+```
 
 ### Tool Features :
 ********************
