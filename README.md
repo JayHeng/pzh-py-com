@@ -1,37 +1,39 @@
 # Jays-PyCOM
-A tiny serial port assistant based on pySerial + wxPython
+A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一款超轻量级的串口调试助手  
 
 [![GitHub release](https://img.shields.io/github/release/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/Jays-PyCOM/v1.0.0.svg)](https://github.com/JayHeng/Jays-PyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/blob/master/LICENSE.txt)
 
+[English](./README-en.md) | 中文
+
 <img src="http://henjay724.com/image/cnblogs/JaysPyCOM_v1.0.0_overview.png" style="zoom:100%" />
 
-### How to use :
+### 1. 安装与使用:
 ********************
-Jays-PyCOM.exe is a free application, you don't need to install it, just open it directly under "\Jays-PyCOM\bin\" dictionary
+　　Jays-PyCOM是纯绿色软件，不需要安装，直接在"\Jays-PyCOM\bin\"目录下双击打开即可。  
 
-> Note: The Jays-PyCOM.exe in the source code package is packaged in the Windows 10 x32 environment and has only been tested in this environment. If it cannot be used directly for system environment reasons, you need to rebuild it.  
+> 注意: Jays-PyCOM是在Windows 10 x32环境下打包的，也仅在该环境下测试过。如果Jays-PyCOM下载后不能在你的当前系统环境下运行，你需要自己重新打包。  
 
-### How to build :
+### 2. 二次开发及重编:
 ********************
-First of all, , you need to install all Non-Python packages listed in [《Jays-PyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html), then follow below steps:
+　　参考这篇文章 [《Jays-PyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html) 安装所有非Python相关的开发工具, 然后按照如下步骤继续安装Python环境:  
 ```text
-  1. Install Python2.7.15 x86 version
-  2. Confirm that the directory "\Python27\" and "\Python27\Scripts\" are in the system environment variable path after the installation is completed
-  3. Click on "do_setup_by_pip.bat" in the "\Jays-PyCOM\env\" directory to install the Python library on which Jays-PyCOM depends
-  4. Click "do_pack_by_pyinstaller.bat" to regenerate the Jays-PyCOM.exe
-  5. Open "\Jays-PyCOM\bin\Jays-PyCOM.exe" to use it
+  1. 安装Python2.7.15 x86 version  
+  2. 确认系统路径包含"\Python27\" 和 "\Python27\Scripts\"  
+  3. 双击"\Jays-PyCOM\env\do_setup_by_pip.bat"脚本安装所有依赖的第三方Python库  
+  4. 双击"\Jays-PyCOM\env\do_pack_by_pyinstaller.bat"脚本重新生成Jays-PyCOM.exe  
+  5. 双击"\Jays-PyCOM\bin\Jays-PyCOM.exe"运行  
 ```
 
-### Tool Features :
+### 3. 软件功能:
 ********************
-* Auto-detect all available COM Ports
-* Both receive and send are supported
-* View data in Hex or Text(ASCII) format
-* Show statistics and error information
-* Design detail: [《Jays-PyCOM诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)
+* 支持自动检测当前PC上的所有可用COM端口  
+* 支持串口数据收发  
+* 支持串口数据以两种格式(Hex/Ascii)显示  
+* 支持串口数据收发统计与错误提示（在状态栏）  
+* 软件设计细节详见: [《Jays-PyCOM诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)  
 
-### License :
+### 4. 许可证:
 ********************
-This package is licensed under the BSD three-clause license. See the LICENSE.txt file for details.
+　　软件采用BSD three-clause license， 更多许可证细节详见LICENSE.txt.  
 
 Copyright © 2017-2018 Jay Heng.
