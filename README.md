@@ -1,7 +1,7 @@
-# Jays-PyCOM
+# 痞子衡串口调试助手
 A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一款超轻量级的串口调试助手  
 
-[![GitHub release](https://img.shields.io/github/release/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/Jays-PyCOM/v1.0.0.svg)](https://github.com/JayHeng/Jays-PyCOM/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/Jays-PyCOM.svg)](https://github.com/JayHeng/Jays-PyCOM/blob/master/LICENSE.txt)
+[![GitHub release](https://img.shields.io/github/release/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/pzh-py-com/v1.0.0.svg)](https://github.com/JayHeng/pzh-py-com/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/blob/master/LICENSE.txt)
 
 [English](./README-en.md) | 中文
 
@@ -9,19 +9,19 @@ A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一
 
 ### 1. 安装与使用:
 ********************
-　　Jays-PyCOM是纯绿色软件，不需要安装，直接在"\Jays-PyCOM\bin\"目录下双击打开即可。  
+　　痞子衡串口调试助手是纯绿色软件，不需要安装，直接在"\pzh-py-com\bin\"目录下双击打开即可。  
 
-> 注意: Jays-PyCOM是在Windows 10 x32环境下打包的，也仅在该环境下测试过。如果Jays-PyCOM下载后不能在你的当前系统环境下运行，你需要自己重新打包。  
+> 注意: 痞子衡串口调试助手是在Windows 10 x32环境下打包的，也仅在该环境下测试过。如果痞子衡串口调试助手下载后不能在你的当前系统环境下运行，你需要自己重新打包。  
 
 ### 2. 二次开发及重编:
 ********************
-　　参考这篇文章 [《Jays-PyCOM环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html) 安装所有非Python相关的开发工具, 然后按照如下步骤继续安装Python环境:  
+　　参考这篇文章 [《痞子衡串口调试助手-开发环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html) 安装所有非Python相关的开发工具, 然后按照如下步骤继续安装Python环境:  
 ```text
   1. 安装Python2.7.15 x86 version  
   2. 确认系统路径包含"\Python27\" 和 "\Python27\Scripts\"  
-  3. 双击"\Jays-PyCOM\env\do_setup_by_pip.bat"脚本安装所有依赖的第三方Python库  
-  4. 双击"\Jays-PyCOM\env\do_pack_by_pyinstaller.bat"脚本重新生成Jays-PyCOM.exe  
-  5. 双击"\Jays-PyCOM\bin\Jays-PyCOM.exe"运行  
+  3. 双击"\pzh-py-com\env\do_setup_by_pip.bat"脚本安装所有依赖的第三方Python库  
+  4. 双击"\pzh-py-com\env\do_pack_by_pyinstaller.bat"脚本重新生成pzh-com.exe  
+  5. 双击"\pzh-py-com\bin\pzh-com.exe"运行  
 ```
 
 ### 3. 软件功能:
@@ -30,7 +30,7 @@ A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一
 * 支持串口数据收发  
 * 支持串口数据以两种格式(Hex/Ascii)显示  
 * 支持串口数据收发统计与错误提示（在状态栏）  
-* 软件设计细节详见: [《Jays-PyCOM诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)  
+* 软件设计细节详见: [《痞子衡串口调试助手诞生记(全六篇)》](https://www.cnblogs.com/henjay724/p/9416096.html)  
 
 ### 4. 许可证:
 ********************

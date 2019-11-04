@@ -5,7 +5,7 @@ block_cipher = None
 
 a = Analysis(['..\\src\\main.py', 
               '..\\src\\formatter.py', 
-			  '..\\src\\win.py'],
+              '..\\src\\win.py'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -22,9 +22,9 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='Jays-PyCOM',
+          name='pzh-com',
           debug=False,
           strip=False,
           upx=True,
           runtime_tmpdir=None,
-          console=False , icon='..\\img\\Jays-PyCOM.ico')
+          console=False , icon='..\\img\\pzh-com.ico')

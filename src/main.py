@@ -27,7 +27,7 @@ class mainWin(win.com_win):
     def __init__(self, parent):
         win.com_win.__init__(self, parent)
         icon = wx.Icon()
-        icon.CopyFromBitmap(wx.Bitmap( u"../img/Jays-PyCOM.ico", wx.BITMAP_TYPE_ANY))
+        icon.CopyFromBitmap(wx.Bitmap( u"../img/pzh-com.ico", wx.BITMAP_TYPE_ANY))
         self.SetIcon(icon)
         self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
         self.refreshComPort(None)
@@ -226,7 +226,7 @@ class mainWin(win.com_win):
             threading.Timer(s_recvInterval, self.recvData).start()
 
     def showHomepageMessage( self, event ):
-        messageText = (('Code: \n    https://github.com/JayHeng/Jays-PyCOM.git \n') +
+        messageText = (('Code: \n    https://github.com/JayHeng/pzh-py-com.git \n') +
                        ('Doc: \n    https://www.cnblogs.com/henjay724/p/9416096.html \n'))
         wx.MessageBox(messageText, "Homepage", wx.OK | wx.ICON_INFORMATION)
 
@@ -239,7 +239,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"Jays-PyCOM v1.0.0")
+    main_win.SetTitle(u"pzh-com v1.0.0")
     main_win.Show()
 
     app.MainLoop()
