@@ -29,7 +29,7 @@ class mainWin(win.com_win):
         icon = wx.Icon()
         icon.CopyFromBitmap(wx.Bitmap( u"../img/pzh-com.ico", wx.BITMAP_TYPE_ANY))
         self.SetIcon(icon)
-        self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
+        self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.jpg", wx.BITMAP_TYPE_ANY ))
         self.refreshComPort(None)
         self.m_choice_comPort.SetSelection( 0 )
 
@@ -99,7 +99,7 @@ class mainWin(win.com_win):
         if s_serialPort.isOpen():
             s_serialPort.close()
             self.m_button_openClose.SetLabel('Open')
-            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.png", wx.BITMAP_TYPE_ANY ))
+            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_black.jpg", wx.BITMAP_TYPE_ANY ))
             self.statusBar.SetStatusText(s_serialPort.name + ' is closed', s_infoStatusFieldIndex)
         else:
             self.statusBar.SetFieldsCount(3)
@@ -115,7 +115,7 @@ class mainWin(win.com_win):
                 self.statusBar.SetStatusText(s_serialPort.name + ' doesn\'t exist !!!', s_infoStatusFieldIndex)
                 return
             self.m_button_openClose.SetLabel('Close')
-            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_green.png", wx.BITMAP_TYPE_ANY ))
+            self.m_bitmap_led.SetBitmap(wx.Bitmap( u"../img/led_green.jpg", wx.BITMAP_TYPE_ANY ))
             self.statusBar.SetStatusText(s_recvStatusStr + str(s_recvTotalBytes), s_recvStatusFieldIndex)
             self.statusBar.SetStatusText(s_sendStatusStr + str(s_sendTotalBytes), s_sendStatusFieldIndex)
             self.statusBar.SetStatusText(s_serialPort.name + ' is open, ' +
@@ -239,7 +239,7 @@ if __name__ == '__main__':
     app = wx.App()
 
     main_win = mainWin(None)
-    main_win.SetTitle(u"pzh-com v1.0.0")
+    main_win.SetTitle(u"pzh-com v1.1.0")
     main_win.Show()
 
     app.MainLoop()

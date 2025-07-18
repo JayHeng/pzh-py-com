@@ -1,11 +1,11 @@
 # 痞子衡串口调试助手
 A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一款超轻量级的串口调试助手  
 
-[![GitHub release](https://img.shields.io/github/release/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/pzh-py-com/v1.0.0.svg)](https://github.com/JayHeng/pzh-py-com/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/blob/master/LICENSE.txt)
+[![GitHub release](https://img.shields.io/github/release/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/releases/latest) [![GitHub commits](https://img.shields.io/github/commits-since/JayHeng/pzh-py-com/v1.1.0.svg)](https://github.com/JayHeng/pzh-py-com/compare/v1.0.0...master) [![GitHub license](https://img.shields.io/github/license/JayHeng/pzh-py-com.svg)](https://github.com/JayHeng/pzh-py-com/blob/master/LICENSE.txt)
 
 [English](./README-en.md) | 中文
 
-![](img/v1.0.0_ui.png)
+![](img/v1.1.0_ui.jpg)
 
 ### 1. 安装与使用:
 ********************
@@ -36,4 +36,4 @@ A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一
 ********************
 　　软件采用BSD three-clause license， 更多许可证细节详见LICENSE.txt.  
 
-Copyright © 2017-2018 Jay Heng.
+Copyright © 2017-2025 Jay Heng.
