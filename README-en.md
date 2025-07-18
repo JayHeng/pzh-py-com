@@ -5,7 +5,7 @@ A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一
 
 English | [中文](./README.md)
 
-<img src="http://henjay724.com/image/cnblogs/JaysPyCOM_v1.0.0_overview.png" style="zoom:100%" />
+![](img/v1.0.0_ui.png)
 
 ### 1. How to use :
 ********************
@@ -13,7 +13,7 @@ English | [中文](./README.md)
 
 > Note: The pzh-com.exe in the source code package is packaged in the Windows 10 x32 environment and has only been tested in this environment. If it cannot be used directly for system environment reasons, you need to rebuild it.  
 
-### 2. How to rebuild :
+### 2. How to rebuild (For Developer who want to add features):
 ********************
 　　First of all, , you need to install all Non-Python packages listed in [《痞子衡串口调试助手-开发环境搭建》](http://www.cnblogs.com/henjay724/p/9416049.html), then follow below steps:  
 ```text

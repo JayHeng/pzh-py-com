@@ -5,7 +5,7 @@ A tiny serial port assistant (GUI) based on Python2.7+wxPython4.0+pySerial | 一
 
 [English](./README-en.md) | 中文
 
-<img src="http://henjay724.com/image/cnblogs/JaysPyCOM_v1.0.0_overview.png" style="zoom:100%" />
+![](img/v1.0.0_ui.png)
 
 ### 1. 安装与使用:
 ********************
